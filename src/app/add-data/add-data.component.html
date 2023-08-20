@@ -1,0 +1,31 @@
+<p>add-data works!</p>
+
+
+<div class="conatiner m-4">
+    <form #chartForm="ngForm" (submit)="onSubmit(chartForm)" class="row g-3 needs-validation" novalidate>
+      <input type="hidden" name="_id" #_id="ngModel"
+        [(ngModel)]="masterservice.selectedChart._id">  
+      
+      <div class="col-sm-3">
+          <label for="validationCustom01" class="form-label"> Year </label>
+          <input type="text" class="form-control" id="validationCustom01" placeholder="year" 
+          #year="ngModel" [(ngModel)]="masterservice.selectedChart.year" required>
+        </div>
+
+        <div class="col-sm-3">
+          <label for="validationCustom02" class="form-label"> Amount</label>
+          <input type="text" class="form-control" id="validationCustom02" placeholder="amount" 
+          #amount="ngModel" [(ngModel)]="masterservice.selectedChart.amount" required>
+        </div>
+
+        <div class="col-sm-3">
+            <label for="validationCustom03" class="form-label"> Colorcode</label>
+            <input type="text" class="form-control" id="validationCustom03" placeholder="colorcode" 
+            #colorcode="ngModel" [(ngModel)]="masterservice.selectedChart.colorcode" required>
+          </div>
+
+        <div class="col-sm-4">
+          <button class="btn btn-primary" type="submit" [disabled]="!chartForm.valid" >Submit </button>
+        </div>
+      </form>
+</div>
